@@ -1,0 +1,77 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Ninja Corp</title>
+</head>
+
+<body >
+    <div class="pink section">
+        <h2 class="white-text center">Ninja Corp</h2>
+    </div>
+    <div class="grey lighten-3 section grey-text" style="position: relative">
+        <p class="flow-text center">Number ONE Ninja company !!</p>
+        <a href="#modal" class="btn-floating btn-large halfway-fab pink modal-trigger">
+            <i class="material-icons">add</i>
+        </a>
+    </div>
+    <div id="modal" class="modal"><!--class modal hides it by default-->
+        <div class="modal-content">
+          <h4 class="pink-text center">Add a New Employee</h4>
+          <form>
+            <div class="input-field">
+              <input type="text" id="name" placeholder="Employee name" />
+            </div>
+            <div class="input-field">
+              <input type="text" id="parent" placeholder="Reports to..." />
+            </div>
+            <div class="input-field">
+              <input type="text" id="department" placeholder="Department" />
+            </div>
+            <div class="input-field center">
+              <button class="btn pink white-text">Add Employee</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="container">
+        <div class="canvas"></div>
+      </div>
+    
+    
+     
+    <script src="https://www.gstatic.com/firebasejs/9.6.4/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.4/firebase-firestore-compat.js"></script>
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyCNNiWpV2oLt4J95scpryMj-jwhOdnCCOg",
+            authDomain: "d3sample-fb.firebaseapp.com",
+            projectId: "d3sample-fb",
+            storageBucket: "d3sample-fb.appspot.com",
+            messagingSenderId: "1081521367407",
+            appId: "1:1081521367407:web:74a76df98a4b94f39fe09a"
+        }
+        const firebaseApp = firebase.initializeApp(firebaseConfig);
+        const db = firebaseApp.firestore();
+        db.settings({ timestampsInSnapshots: true })
+    </script>
+    <script src="https://d3js.org/d3.v5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- legend & tip libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"
+        integrity="sha512-wNH6xsp2n8CfB91nrBtfc4sfLwYPBMjSWVUwQOp60AYYXH6i8yCwuKFZ4rgK2i6pQek/b+bSyR7b01/922IBzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.min.js"
+        integrity="sha512-a+/SD0dbGeXTN4AA5F1dDZqsPvXKKyS1bvU2z5ElpKNJ4xQlOMUs/1+suA+j+kj5nAAya+VmT5HUKZmazluxVQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="index.js"></script>
+    <script src="graph.js"></script>
+</body>
+
+</html>
